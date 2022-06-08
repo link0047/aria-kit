@@ -1,4 +1,7 @@
 <script>
+  import Button from "$lib/button/button.svelte";
+import { setContext } from "svelte";
+  import { writable } from "svelte/store";
   export let ref = null;
   export let invalid = false;
   export let name = undefined;
@@ -6,9 +9,16 @@
   export let required = false;
   export let labelText = '';
   export let id = ``;
+  export let selected = undefined;
+  export let afterChange = () => {};
   $: errorId = `error-${id}`;
+
+  const selectedValue = writable(selected);
+  setContext('select', selectedValue);
+
+  $: selectedValue.set(selected);
 </script>
-<div class="select">
+<div class="select" {...$$restProps}>
   <label id="" class="select__label" for="{id}">{labelText}</label>
   <select 
     bind:this="{ref}"
@@ -19,7 +29,13 @@
     required="{ required || undefined }"
     id="{id}"
     name="{name}"
-    {...$$restProps}
+    on:change="{({ target }) => {
+      selectedValue.set(target.value);
+      afterChange(target.value);
+    }}"
+    on:input
+    on:focus
+    on:blur
   >
     <slot />
   </select>

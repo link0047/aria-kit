@@ -6,7 +6,7 @@
   export let required = false;
 </script>
 <div class="checkbox">
-  <input class="checkbox__native-control" id="{id}" name="{name}" type="checkbox" value="{value}" aria-labelledby="{id}" required={required || undefined}>
+  <input class="checkbox__native-control" id="{id}" name="{name}" type="checkbox" value="{value}" aria-labelledby="{labelId}" required={required || undefined}>
   <div class="checkbox__display"></div>
   <label id={labelId} class="checkbox__label" for="{id}">
     <slot />

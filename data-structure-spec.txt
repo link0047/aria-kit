@@ -1,0 +1,40 @@
+card panel
+  variant | select
+  title | input
+  url | input
+  mobile img | input
+  deskop img | input
+  alt | input
+
+card group panel
+  section heading | input
+  heading alignment | select
+  cards per row | select
+
+carousel panel
+  section heading | input
+  card per view | select
+  dots | checkbox
+
+#notes 
+panel should have ability to remove section from data object
+
+list
+  item
+    breadcrumbs
+  item
+    header
+  item
+    hero
+  item
+    list
+      item
+      item
+      item
+      item
+    button
+  item
+    list
+      item
+      item
+    button

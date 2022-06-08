@@ -1,24 +1,56 @@
 <script>
   export let variant = 'none';
+  export let id = null;
   // export let size = undefined;
-  export let name = undefined;
+  export let name = null;
   export let required = false;
   export let readonly = false;
   export let min = null;
   export let max = null;
   export let inputRef = null;
   export let labelText = '';
+  export let value = '';
+  export let placeholder = null;
+  export let type = 'text';
+  export let afterChange = () => {}
+
+  function debounce(fn, time) {
+    let timeoutId
+
+    function cancel() {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+    }
+
+    function wrapper(...args) {
+      cancel()
+      timeoutId = setTimeout(() => {
+        timeoutId = null
+        fn(...args)
+      }, time)
+    }
+
+    wrapper.cancel = cancel
+
+    return wrapper
+  }
+
+  const handleKeyup = debounce(e => {
+    afterChange(e.target.value);
+  }, 300);
 </script>
 <div 
   class="textfield"
   class:textfield--outline={variant === 'outline'}
   class:textfield--box={variant === 'box'}
+  on:click
   >
   <label id="" class="textfield__label" for="">{labelText}</label>
   <input
     bind:this="{inputRef}"
     class="textfield__native-control"
-    id=""
+    id="{id}"
     name="{name}"
     required="{required}"
     readonly="{readonly}"
@@ -27,7 +59,19 @@
     aria-invalid="false"
     minlength="{min}"
     maxlength="{max}"
+    placeholder="{placeholder}"
+    type="{type}"
+    value="{value ?? ''}"
     {...$$restProps}
+    on:change
+    on:input
+    on:keydown
+    on:keyup="{handleKeyup}"
+    on:focus
+    on:blur
+    on:mouseover
+    on:mouseenter
+    on:mouseleave
     >
   <div class="textfield__message" aria-live="assertive" id="" role="alert"></div>
 </div>

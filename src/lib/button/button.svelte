@@ -9,6 +9,7 @@
   class="btn"
   class:btn--primary={ variant === 'primary' }
   class:btn--outlined={ variant === 'outlined' }
+  class:btn--icon={ variant === 'icon' }
   class:btn--raised={ raised }
   type="{type}"
   disabled={disabled}
@@ -52,6 +53,11 @@
   -webkit-appearance: none;
   appearance: none;
   gap: 4px;
+}
+
+.btn--icon {
+  padding: 0;
+  min-width: 24px;
 }
 
 .btn--raised {

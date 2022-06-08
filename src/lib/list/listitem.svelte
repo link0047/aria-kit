@@ -1,4 +1,7 @@
-<li class="list__item" {...$$restProps}>
+<li 
+  class="list__item" 
+  {...$$restProps}
+>
   <slot />
 </li>
 <style>
@@ -6,7 +9,7 @@
   position: relative;
   flex: 1 1 auto;
   padding: 0 8px;
-  height: 36px;
+  min-height: 36px;
   display: grid;
   align-items: center;
   border-radius: 4px;

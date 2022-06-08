@@ -3,12 +3,12 @@
   const transparentPixel = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
   export let url = '';
   export let title = '';
-  export let image = { alt: '', mobile: transparentPixel, desktop: transparentPixel};
+  export let image = { alt: '', mobile: transparentPixel, desktop: transparentPixel };
 </script>
 <Card class="card--product">
   <a href="{url}" title="{title}">
     <picture class="card__media">
-      <source media="(max-width: 560px)" srcset="{image.mobile}">
+      <source media="(max-width: 560px)" srcset="{image.mobile}"/>
       <img width="232" height="232" alt="{image.alt}" class="image" decoding="async" src="{image.mobile}">
     </picture>
     <div class="card__title">{title}</div>
@@ -43,7 +43,6 @@
 
     :global(.card--product):hover .card__title {
       transform: scale(1.1);
-      
     }
 
   }

@@ -12,7 +12,7 @@
   grid-area: primary-sidebar;
   z-index: 10;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
   background-color: #fff;
   border-right: 1px solid #e1e3e5;
 }

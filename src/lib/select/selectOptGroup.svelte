@@ -1,6 +1,6 @@
 <script>
   /** Set to `true` to disable the optgroup element */
-  export let disabled = false;
+  export let disabled = undefined;
   /** Specify the label attribute of the optgroup element */
   export let label = 'Provide label';
 </script>

@@ -1,0 +1,39 @@
+list
+  item
+    breadcrumb
+  item
+    header
+  item
+    hero
+  item
+    card group
+      card
+        {
+          title:'',
+          url: '',
+          image: {
+            mobile: '',
+            desktop: '',
+            alt: ''
+          }
+        }
+      card
+      card
+      card
+  item
+    card group
+      card
+      card
+  item
+    carousel
+      card
+      card
+      card
+      card
+      card
+      card
+  item
+    card group
+      card
+      card
+      card

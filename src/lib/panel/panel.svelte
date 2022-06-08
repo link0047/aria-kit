@@ -18,6 +18,10 @@
   flex-flow: column nowrap;
 }
 
+.panel__title:first-letter {
+  text-transform: capitalize;
+}
+
 .panel__header {
   padding: 8px 16px;
   border-bottom: 1px solid #e1e3e5;

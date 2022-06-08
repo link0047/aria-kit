@@ -1,8 +1,19 @@
 <script>
-  export let value = '';
-  export let hidden = false;
-  export let disabled = false;
-  export let selected = false;
+  import { getContext, onMount } from "svelte";
+  export let value = undefined;
+  export let hidden = undefined;
+  export let disabled = undefined;
+  export let selected = undefined;
+  const ctx = getContext('select');
+  
+  onMount(() => {
+    if (selected && $ctx && $ctx !== value) {
+      $ctx = value;
+    }
+
+    if ($ctx && $ctx == value) selected = true;
+  });
+  
 </script>
 <option
   value="{value}"
