@@ -10,8 +10,6 @@
       <div class="block">{i}</div>
     </Slide>   
   {/each}
-  
-  
 </Carousel>
 <section class="page-section">
   {#if $store.header.hasBreadcrumbs}

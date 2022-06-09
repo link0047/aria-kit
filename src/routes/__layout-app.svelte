@@ -9,24 +9,24 @@
   import { ProductCard } from "$lib/card";
 
 
-  $store = {
-    selectedTemplate: 'Homepage',
-    sidebarPanel: {
-      heading: 'Homepage',
-      opened: false,
-      title: undefined,
-      items: []
-    },
-    sidebarList: [
-      { text: 'Breadcrumbs', props:{ id: 0 }},
-      { text: 'Header', props: { id: 1 }}
-    ],
-    header: {
-      hasBreadcrumbs: true,
-      currentPage: 'Tees'
-    },
-    sections: []
-  };
+  // $store = {
+  //   selectedTemplate: 'Homepage',
+  //   sidebarPanel: {
+  //     heading: 'Homepage',
+  //     opened: false,
+  //     title: undefined,
+  //     items: []
+  //   },
+  //   sidebarList: [
+  //     { text: 'Breadcrumbs', props:{ id: 0 }},
+  //     { text: 'Header', props: { id: 1 }}
+  //   ],
+  //   header: {
+  //     hasBreadcrumbs: true,
+  //     currentPage: 'Tees'
+  //   },
+  //   sections: []
+  // };
 
   function addSidebarSection() {
     let len = $store.sidebarList.length;
