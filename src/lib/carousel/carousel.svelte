@@ -10,10 +10,12 @@
 
   function next() {
     currentPage += 1;
+    console.log(currentPage);
   }
 
   function prev() {
     currentPage -= 1;
+    console.log(currentPage);
   }
 
   onMount(() => {
